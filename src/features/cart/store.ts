@@ -9,7 +9,9 @@ interface CartItem {
 interface CartState {
   items: CartItem[];
 
-  addToCart(product: Product): void;
+  addToCart: (product: Product) => void;
+
+  increaseQuantity: (id: number) => void;
 }
 
 export const useCartStore = create<CartState>((set, get) => ({
@@ -31,5 +33,11 @@ export const useCartStore = create<CartState>((set, get) => ({
       });
     }
     console.log('item added successfully');
+  },
+
+  increaseQuantity: (id: number) => {
+    get().items.map((item) =>
+      item.product.id === id ? { ...item, quantity: item.quantity + 1 } : item
+    );
   },
 }));
