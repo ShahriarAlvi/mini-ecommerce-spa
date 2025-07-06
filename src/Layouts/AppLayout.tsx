@@ -5,7 +5,7 @@ export default function AppLayout() {
   return (
     <>
       <Navbar />
-      <main className="mt-4">
+      <main className="max-w-7xl mx-auto px-4 py-8 min-h-[calc(100vh-80px)]">
         <Outlet />
       </main>
     </>

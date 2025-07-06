@@ -4,7 +4,7 @@ import Home from './pages/Home.tsx';
 import ProductDetail from './pages/ProductDetail.tsx';
 import AppLayout from './Layouts/AppLayout.tsx';
 
-function App() {
+export default function App() {
   return (
     <Routes>
       <Route element={<AppLayout />}>
@@ -14,5 +14,3 @@ function App() {
     </Routes>
   );
 }
-
-export default App;
