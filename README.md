@@ -1,69 +1,105 @@
-# React + TypeScript + Vite
+# 🛍️ MiniShop - React E-Commerce SPA
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A minimal, responsive single-page e-commerce application built with **React + Vite**, featuring:
 
-Currently, two official plugins are available:
+- Product listing and details
+- Add to cart with persistent cart UI
+- Toast notifications
+- Checkout form with validation
+- Cart sidebar with quantity control
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+---
 
-## Expanding the ESLint configuration
+## 🚀 Live Demo
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+👉 [View Live on Netlify/Vercel](#)  
+(Replace with your actual deployed link)
 
-```js
-export default tseslint.config([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+---
 
-      // Remove tseslint.configs.recommended and replace with this
-      ...tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      ...tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      ...tseslint.configs.stylisticTypeChecked,
+## 🧱 Tech Stack
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+- **React + Vite**
+- **TypeScript**
+- **TailwindCSS**
+- **Zustand** – lightweight state management
+- **React Hook Form + Zod** – form validation
+- **Lucide React** – elegant icons
+- **React Router** – client-side routing
+- **clsx** – conditional classnames
+
+---
+
+## 📸 Screenshots
+
+> _You can optionally paste a few screenshots or screen recordings here._
+
+---
+
+## 🧩 Features
+
+- ✅ Modern responsive UI with TailwindCSS
+- ✅ Product List and Detail Page
+- ✅ Slide-in Cart Sidebar with:
+    - Quantity control
+    - Remove items
+    - Total calculation
+- ✅ Toast notifications using `react-hot-toast`
+- ✅ Checkout modal with form validation using `zod-resolver` 
+- ✅ Clean routing with `react-router-dom`
+
+---
+
+## 📦 Installation
+
+```bash
+git clone https://github.com/your-username/minishop.git
+cd minishop
+npm install
+npm run dev
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+---
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+## 🏗️ Project Structure
 
-export default tseslint.config([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+```bash
+src/
+├── components/         # Navbar, CartSidebar, ProductCard, etc.
+├── features/           # cart and products feature folders
+│   ├── cart/           # Zustand store
+│   └── products/       # Product fetching hook
+├── pages/              # Home, ProductDetail
+├── types/              # Product types
+├── utils/              # Toast utilities
+├── App.tsx
+├── main.tsx
+└── index.css
 ```
+
+---
+
+## 📥 Dummy Data
+
+All product data is stored in a local static file or hook. You can replace it with your own API or backend later.
+
+---
+
+## 🧪 Future Improvements
+
+- 🛒 Persistent cart via `localStorage`
+- 🔐 Auth flow (login/signup)
+- 🌐 Backend connection for real product data
+- 📦 Order history / checkout confirmation page
+
+---
+
+## 🧑‍💻 Author
+
+Made by [Shahriar Alvi](https://github.com/shahriaralvi)
+
+---
+
+## 📄 License
+
+This project is open source and free to use under the [MIT License](LICENSE).

@@ -43,7 +43,7 @@ export default function CartSidebar({ isOpen, onClose }: CartSidebarProps) {
           </button>
         </div>
 
-        <div className="p-4 space-y-5 overflow-y-auto h-[calc(100%-180px)]">
+        <div className="flex-1 overflow-y-auto p-4 space-y-5">
           {items.length === 0 ? (
             <p className="text-center text-grey-600 mt-10"> Cart is empty</p>
           ) : (
@@ -65,7 +65,7 @@ export default function CartSidebar({ isOpen, onClose }: CartSidebarProps) {
                     $ {product.price}
                   </p>
 
-                  <div className="flex gap-2 mt-2 items-center">
+                  <div className="flex gap-2 mt-2 justify-center">
                     <button
                       onClick={() => decrease(product.id)}
                       className="bg-gray-100 p-1 rounded hover:bg-gray-200 transition"
@@ -91,8 +91,14 @@ export default function CartSidebar({ isOpen, onClose }: CartSidebarProps) {
             ))
           )}
         </div>
+
         <div className="p-4 border-t text-right font-bold">
-          <div className="mb-2"> Total: ${total.toFixed(2)} </div>
+          <div className="flex justify-between mb-3 text-sm text-gray-600">
+            <span>Total:</span>
+            <span className="text-base font-semibold text-gray-900">
+              ${total.toFixed(2)}
+            </span>
+          </div>
           <button
             disabled={items.length === 0}
             onClick={() => setShowCheckout(true)}
@@ -104,6 +110,7 @@ export default function CartSidebar({ isOpen, onClose }: CartSidebarProps) {
           </button>
         </div>
       </aside>
+
       <CheckoutModal
         isOpen={showCheckout}
         onClose={() => setShowCheckout(false)}

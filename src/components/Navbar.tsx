@@ -11,7 +11,7 @@ export default function Navbar() {
   return (
     <>
       <nav className="bg-white shadow-lg sticky top-0 z-50">
-        <div className="max-w-6xl mx-auto px-4">
+        <div className="max-w-7xl mx-auto px-4">
           <div className="h-16 flex justify-between items-center">
             <Link
               to="/"
