@@ -1,5 +1,6 @@
 import type { Product } from '../types/Product.ts';
 import { Link } from 'react-router-dom';
+import { toastAddToCart } from '../utils/useToastCart.ts';
 
 interface ProductCardProps {
   product: Product;
@@ -24,8 +25,8 @@ export default function ProductCard({
       </Link>
       <p className="text-green-600 font-bold text-md mt-2">$ {product.price}</p>
       <button
-        onClick={() => onAddToCart(product)}
-        className="mt-2 px-4 py-2 rounded bg-blue-300 text-white hover:bg-blue-700 transition-colors duration-200"
+        onClick={() => toastAddToCart(product, onAddToCart)}
+        className="mt-2 px-4 py-2 rounded bg-blue-500 text-white hover:bg-blue-600 transition-colors duration-200"
       >
         Add to Cart
       </button>

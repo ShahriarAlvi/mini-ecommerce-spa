@@ -2,6 +2,10 @@ import { useCartStore } from '../features/cart/store.ts';
 import { Minus, Plus, ShoppingCart, Trash2, X } from 'lucide-react';
 import { useState } from 'react';
 import CheckoutModal from './CheckoutModal.tsx';
+import {
+  toastCheckoutSuccess,
+  toastRemoveFromCart,
+} from '../utils/useToastCart.ts';
 
 interface CartSidebarProps {
   isOpen: boolean;
@@ -39,7 +43,7 @@ export default function CartSidebar({ isOpen, onClose }: CartSidebarProps) {
           </button>
         </div>
 
-        <div className="p-4 space-y-5 overflow-y-auto h-[calc(100%-160px)]">
+        <div className="p-4 space-y-5 overflow-y-auto h-[calc(100%-180px)]">
           {items.length === 0 ? (
             <p className="text-center text-grey-600 mt-10"> Cart is empty</p>
           ) : (
@@ -78,7 +82,7 @@ export default function CartSidebar({ isOpen, onClose }: CartSidebarProps) {
                   </div>
                 </div>
                 <button
-                  onClick={() => remove(product.id)}
+                  onClick={() => toastRemoveFromCart(product, remove)}
                   className="text-gray-400 hover:text-red-500 transition"
                 >
                   <Trash2 className="w-5 h-5" />
@@ -88,11 +92,13 @@ export default function CartSidebar({ isOpen, onClose }: CartSidebarProps) {
           )}
         </div>
         <div className="p-4 border-t text-right font-bold">
-          <div> Total: ${total.toFixed(2)} </div>
+          <div className="mb-2"> Total: ${total.toFixed(2)} </div>
           <button
             disabled={items.length === 0}
             onClick={() => setShowCheckout(true)}
-            className="w-full bg-blue-500 text-white py-2 rounded"
+            className="w-full py-2 rounded text-white font-medium transition
+             bg-blue-500 hover:bg-blue-600 
+             disabled:bg-gray-300 disabled:cursor-not-allowed"
           >
             Checkout
           </button>
@@ -101,10 +107,10 @@ export default function CartSidebar({ isOpen, onClose }: CartSidebarProps) {
       <CheckoutModal
         isOpen={showCheckout}
         onClose={() => setShowCheckout(false)}
-        onSubmit={(data) => {
+        onSubmit={async (data) => {
+          console.log(data);
+          await toastCheckoutSuccess(clearCart);
           setShowCheckout(false);
-          clearCart();
-          console.log('Order Placed: ', data);
         }}
       />
     </>

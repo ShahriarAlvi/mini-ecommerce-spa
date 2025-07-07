@@ -1,6 +1,7 @@
 import { useParams } from 'react-router-dom';
 import { useProductById } from '../features/products/hooks.ts';
 import { useCartStore } from '../features/cart/store.ts';
+import { toastAddToCart } from '../utils/useToastCart.ts';
 
 export default function ProductDetail() {
   const { id } = useParams();
@@ -44,7 +45,7 @@ export default function ProductDetail() {
           </div>
 
           <button
-            onClick={() => addToCart(product)}
+            onClick={() => toastAddToCart(product, addToCart)}
             className="mt-6 px-6 py-2 rounded bg-blue-400 text-white hover:bg-blue-700 transition w-fit"
           >
             Add to Cart

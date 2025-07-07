@@ -34,7 +34,6 @@ export default function CheckoutModal({
 
   const handleFormSubmit = (data: CheckoutFormData) => {
     onSubmit?.(data);
-    alert('Order placed successfully');
     reset();
     onClose();
   };
