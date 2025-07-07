@@ -25,11 +25,13 @@ export default function CartSidebar({ isOpen, onClose }: CartSidebarProps) {
   return (
     <>
       <aside
-        className={`fixed top-0 right-0 w-80 h-full bg-white 
-      z-5 border-l shadow-lg z-50 transition-transform duration-300 ${
-        isOpen ? 'translate-x-0' : 'translate-x-full'
-      }`}
+        className={`fixed top-0 right-0 w-80 max-w-full h-full bg-white 
+        shadow-lg z-50 transition-transform duration-300
+        border-l border-gray-200
+        flex flex-col
+        ${isOpen ? 'translate-x-0' : 'translate-x-full'}`}
       >
+        {/* Header */}
         <div className="p-4 flex justify-between items-center border-b">
           <div className="flex items-center gap-2 text-lg font-semibold">
             <ShoppingCart className="w-5 h-5" />
@@ -43,9 +45,12 @@ export default function CartSidebar({ isOpen, onClose }: CartSidebarProps) {
           </button>
         </div>
 
+        {/* Items List */}
         <div className="flex-1 overflow-y-auto p-4 space-y-5">
           {items.length === 0 ? (
-            <p className="text-center text-grey-600 mt-10"> Cart is empty</p>
+            <p className="text-center text-gray-500 mt-10">
+              Your cart is empty
+            </p>
           ) : (
             items.map(({ product, quantity }) => (
               <div
@@ -55,14 +60,14 @@ export default function CartSidebar({ isOpen, onClose }: CartSidebarProps) {
                 <img
                   src={product.image}
                   alt={product.title}
-                  className="rounded-lg w-16 h-16 rounded object-cover"
+                  className="rounded-lg w-16 h-16 object-cover"
                 />
                 <div className="flex-1">
-                  <h3 className="text-sm font-medium leading-tight line-clamp-1">
+                  <h3 className="text-sm font-medium line-clamp-1">
                     {product.title}
                   </h3>
                   <p className="text-green-600 text-sm font-semibold mt-1">
-                    $ {product.price}
+                    ${product.price}
                   </p>
 
                   <div className="flex gap-2 mt-2 justify-center">
@@ -92,6 +97,7 @@ export default function CartSidebar({ isOpen, onClose }: CartSidebarProps) {
           )}
         </div>
 
+        {/* Footer */}
         <div className="p-4 border-t text-right font-bold">
           <div className="flex justify-between mb-3 text-sm text-gray-600">
             <span>Total:</span>
@@ -103,14 +109,15 @@ export default function CartSidebar({ isOpen, onClose }: CartSidebarProps) {
             disabled={items.length === 0}
             onClick={() => setShowCheckout(true)}
             className="w-full py-2 rounded text-white font-medium transition
-             bg-blue-500 hover:bg-blue-600 
-             disabled:bg-gray-300 disabled:cursor-not-allowed"
+              bg-blue-500 hover:bg-blue-600
+              disabled:bg-gray-300 disabled:cursor-not-allowed"
           >
             Checkout
           </button>
         </div>
       </aside>
 
+      {/* Checkout Modal */}
       <CheckoutModal
         isOpen={showCheckout}
         onClose={() => setShowCheckout(false)}
