@@ -1,18 +1,88 @@
-import type {Product} from "../../types/Product.ts";
+import type { Product } from '../../types/Product.ts';
 
-export const dummyProducts: Product [] = [
-    {
-        id: 1,
-        title: "Blue Sneakers",
-        image: "https://via.placeholder.com/300x200.png?text=Blue+Sneakers",
-        price: 49.99,
-        description: "Comfortable sneakers for daily wear.",
-    },
-    {
-        id: 2,
-        title: "Red Hoodie",
-        image: "https://via.placeholder.com/300x200.png?text=Red+Hoodie",
-        price: 59.99,
-        description: "Warm and stylish red hoodie.",
-    },
-]
+export const dummyProducts: Product[] = [
+  {
+    id: 1,
+    title: 'Blue Sneakers',
+    image: 'https://picsum.photos/300/200?random=1',
+    price: 49.99,
+    description: 'Comfortable sneakers for daily wear.',
+  },
+  {
+    id: 2,
+    title: 'Red Hoodie',
+    image: 'https://picsum.photos/300/200?random=2',
+    price: 59.99,
+    description: 'Warm and stylish red hoodie.',
+  },
+  {
+    id: 3,
+    title: 'Classic White T-Shirt',
+    image: 'https://picsum.photos/300/200?random=3',
+    price: 19.99,
+    description: 'Soft cotton white t-shirt, great for layering.',
+  },
+  {
+    id: 4,
+    title: 'Black Jeans',
+    image: 'https://picsum.photos/300/200?random=4',
+    price: 69.99,
+    description: 'Slim-fit black denim jeans with stretch.',
+  },
+  {
+    id: 5,
+    title: 'Leather Wallet',
+    image: 'https://picsum.photos/300/200?random=5',
+    price: 29.99,
+    description: 'Genuine leather wallet with multiple compartments.',
+  },
+  {
+    id: 6,
+    title: 'Smart Watch',
+    image: 'https://picsum.photos/300/200?random=6',
+    price: 149.99,
+    description: 'Track your fitness and stay connected on the go.',
+  },
+  {
+    id: 7,
+    title: 'Wireless Earbuds',
+    image: 'https://picsum.photos/300/200?random=7',
+    price: 89.99,
+    description: 'Compact, noise-canceling wireless earbuds.',
+  },
+  {
+    id: 8,
+    title: 'Canvas Backpack',
+    image: 'https://picsum.photos/300/200?random=8',
+    price: 39.99,
+    description: 'Durable and spacious backpack for everyday use.',
+  },
+  {
+    id: 9,
+    title: 'Gaming Mouse',
+    image: 'https://picsum.photos/300/200?random=9',
+    price: 49.99,
+    description: 'High-precision gaming mouse with RGB lighting.',
+  },
+  {
+    id: 10,
+    title: 'Bluetooth Speaker',
+    image: 'https://picsum.photos/300/200?random=10',
+    price: 59.99,
+    description: 'Portable speaker with crystal clear sound.',
+  },
+  {
+    id: 11,
+    title: 'Fitness Tracker Band',
+    image: 'https://picsum.photos/300/200?random=11',
+    price: 34.99,
+    description: 'Track your steps, sleep, and workouts.',
+  },
+  {
+    id: 12,
+    title: 'Sunglasses',
+    image: 'https://picsum.photos/300/200?random=12',
+    price: 24.99,
+    description: 'Stylish UV-protective sunglasses.',
+  },
+];

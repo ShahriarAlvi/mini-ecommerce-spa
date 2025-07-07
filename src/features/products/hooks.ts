@@ -6,8 +6,8 @@ export const useProducts = () => {
   return useQuery({
     queryKey: ['products'],
     queryFn: async () => {
-      return new Promise((resolve) => {
-        setTimeout(() => resolve(dummyProducts), 500);
+      return new Promise<Product[]>((resolve) => {
+        setTimeout(() => resolve(dummyProducts), 200);
       });
     },
   });
