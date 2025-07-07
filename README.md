@@ -46,8 +46,8 @@ A minimal, responsive single-page e-commerce application built with **React + Vi
 ## 📦 Installation
 
 ```bash
-git clone https://github.com/your-username/minishop.git
-cd minishop
+git clone https://github.com/ShahriarAlvi/mini-ecommerce-spa.git
+cd mini-ecommerce-spa
 npm install
 npm run dev
 ```
