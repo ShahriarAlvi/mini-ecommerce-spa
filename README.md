@@ -12,8 +12,7 @@ A minimal, responsive single-page e-commerce application built with **React + Vi
 
 ## 🚀 Live Demo
 
-👉 [View Live on Netlify/Vercel](#)  
-(Replace with your actual deployed link)
+👉 [View Live on Netlify](https://mini-ecommerce-spa.netlify.app/)
 
 ---
 
@@ -27,12 +26,6 @@ A minimal, responsive single-page e-commerce application built with **React + Vi
 - **Lucide React** – elegant icons
 - **React Router** – client-side routing
 - **clsx** – conditional classnames
-
----
-
-## 📸 Screenshots
-
-> _You can optionally paste a few screenshots or screen recordings here._
 
 ---
 
@@ -96,7 +89,7 @@ All product data is stored in a local static file or hook. You can replace it wi
 
 ## 🧑‍💻 Author
 
-Made by [Shahriar Alvi](https://github.com/shahriaralvi)
+Made by [Shahriar Alvi](https://github.com/ShahriarAlvi)
 
 ---
 
